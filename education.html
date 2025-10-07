@@ -1,0 +1,173 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Portfolio</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background: #fff;
+		}
+		.navbar-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+		.navbar {
+			display: flex;
+			gap: 40px;
+			justify-content: center;
+			align-items: center;
+			background: none;
+		}
+		.navbar a {
+			color: rgb(192, 177, 111);
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1.1rem;
+			transition: color 0.2s;
+		}
+		.navbar a:hover {
+			color: rgb(187, 187, 1);
+		}
+		.dropdown {
+			position: relative;
+		}
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: beige;
+			min-width: 180px;
+			box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+			border-radius: 8px;
+			z-index: 1;
+		}
+		.dropdown-content a {
+			display: block;
+			padding: 8px 16px;
+			color: rgb(173, 117, 13);
+			font-weight: normal;
+			font-size: 1rem;
+		}
+		.dropdown-content a:hover {
+			background: rgba(255,255,0,0.2);
+			color: rgb(187, 187, 1);
+		}
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+		.carousel {
+			position: relative;
+			max-width: 700px;
+			margin: 20px auto;
+			overflow: hidden;
+			border-radius: 10px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+		.slides {
+			display: flex;
+			transition: transform 0.5s ease-in-out;
+			width: 100%;
+		}
+		.slide {
+			flex: 0 0 100%;
+			position: relative;
+		}
+		.slide img {
+			width: 100%;
+			display: block;
+		}
+		.prev, .next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0,0,0,0.5);
+			color: white;
+			border: none;
+			padding: 12px;
+			cursor: pointer;
+			border-radius: 50%;
+			z-index: 2;
+		}
+		.prev { left: 35px; }
+		.next { right: 35px; }
+		.prev:hover, .next:hover {
+			background: rgba(0,255,255,0.8);
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar-container">
+		<nav class="navbar">
+			<a href="index.html">Home</a>
+			<a href="galeri.html">Gallery</a>
+			<a href="kontak.html">Contacts</a>
+			<div class="dropdown">
+				<a href="about.html">About</a>
+				<div class="dropdown-content">
+					<a href="education.html">Education</a>
+					<a href="skill.html">Skills</a>
+					<a href="project.html">Projects/Achievements</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<h1 style="margin-left: 30; margin-right: 30;text-align: center;">Education</h1>
+	<ol>
+		<li style="margin-left: 30; margin-right: 30;">SMA Labschool Kebayoran / Senior High School<br>
+			July 2023 - Present<br>
+			Jl. KH. Ahmad Dahlan No.14, RT.2/RW.1, Kramat Pela, Kebayoran Baru, South Jakarta City, Jakarta 12130
+		</li><br>
+		<li style="margin-left: 30; margin-right: 30;">SMP Labschool Cirendeu / Junior High School<br>
+			July 2020 - June 2023<br>
+			Jl. Raya Cirendeu No.40, Pisangan, Kec. Ciputat Tim., Kota Tangerang Selatan, Banten 15419
+			<ul>
+				<li>Student with Second Highest Diploma Score</li>
+				<li>Student with Outstanding Achievements in STEM</li>
+			</ul>
+		</li><br>
+		<li style="margin-left: 30; margin-right: 30;">SD Kharisma Bangsa / Elementary School<br>
+			July 2014 - June 2020<br>
+			Jalan Terbang Layang No.21, Pd. Cabe Udik, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418
+		</li>
+	</ol>
+	<div class="carousel">
+		<div class="slides">
+			<div class="slide">
+				<img src="gallery-container/sdkb.png" alt="SD Kharisma Bangsa">
+			</div>
+			<div class="slide">
+				<img src="gallery-container/smplabsren.png" alt="SMP Labschool Cirendeu">
+			</div>
+			<div class="slide">
+				<img src="gallery-container/smalabsky.jpeg" alt="SMA Labschool Kebayoran">
+			</div>
+		</div>
+		<button class="prev">&#10094;</button>
+		<button class="next">&#10095;</button>
+	</div>
+	<script>
+		const slides = document.querySelector('.slides');
+		const total = document.querySelectorAll('.slide').length;
+		let index = 0;
+
+		function showSlide(i) {
+			index = (i + total) % total;
+			slides.style.transform = `translateX(${-index * 100}%)`;
+		}
+
+		document.querySelector('.prev').onclick = () => showSlide(index - 1);
+		document.querySelector('.next').onclick = () => showSlide(index + 1);
+
+		// Show the first slide at start
+		showSlide(0);
+	</script>
+</body>
+</html>

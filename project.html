@@ -1,0 +1,187 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Portfolio</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background: #fff;
+		}
+		.navbar-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+		.navbar {
+			display: flex;
+			gap: 40px;
+			justify-content: center;
+			align-items: center;
+			background: none;
+		}
+		.navbar a {
+			color: rgb(192, 177, 111);
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 1.1rem;
+			transition: color 0.2s;
+		}
+		.navbar a:hover {
+			color: rgb(187, 187, 1);
+		}
+		.dropdown {
+			position: relative;
+		}
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: beige;
+			min-width: 180px;
+			box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+			border-radius: 8px;
+			z-index: 1;
+		}
+		.dropdown-content a {
+			display: block;
+			padding: 8px 16px;
+			color: rgb(173, 117, 13);
+			font-weight: normal;
+			font-size: 1rem;
+		}
+		.dropdown-content a:hover {
+			background: rgba(255,255,0,0.2);
+			color: rgb(187, 187, 1);
+		}
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+        .parallax{
+            background-image: url("gallery-container/projects.png");
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .parallax.kedua{
+            background-image: url("gallery-container/academics.png");
+        }
+
+        .parallax.ketiga{
+            background-image: url("gallery-container/arts.png");
+        }
+
+        .content.project {
+            height:100%;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background: rgb(210, 193, 182);
+            text-align: center;
+            padding: 40px;
+        }
+        .content.achieve {
+            height:100%;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background: rgb(210, 208, 182);
+            text-align: center;
+            padding: 40px;
+        }
+        .content.heading {
+            height: 100px;
+            font-weight: bold;
+            font-size: 25;
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            background: rgb(255, 255, 255);
+            text-align: center;
+            padding: 30px;
+        }
+	</style>
+</head>
+<body>
+	<div class="navbar-container">
+		<nav class="navbar">
+			<a href="index.html">Home</a>
+			<a href="galeri.html">Gallery</a>
+			<a href="kontak.html">Contacts</a>
+			<div class="dropdown">
+				<a href="about.html">About</a>
+				<div class="dropdown-content">
+					<a href="education.html">Education</a>
+					<a href="skill.html">Skills</a>
+					<a href="project.html">Projects/Achievements</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+    <div class="content heading">Projects and Achievements</div>
+    <div class="parallax"></div>
+    <div class="content project">
+        <div>
+            <h1>Projects</h1>
+            <ol>
+                <li>NUS AI/ML<br>
+                    Present startup idea‘Lokally’ and approaches in AI/ML projects
+                </li>
+                <li>
+                    ClariMind AI<br>
+                    An app made for MIT’s Global AI Hackathon that helps dementia patients live their life.
+                </li>
+                <li>
+                    Ventureprise<br>
+                    A prototype app designed for several business plan competitions that helps UMKM owners enhance their businesses through training and consulting.
+                </li>
+                <li>
+                    Python Projects<br>
+                    Published Python projects on GitHub and tutorials on Medium.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="parallax kedua"></div>
+    <div class="content achieve">
+        <div>
+            <h1>Achievements: Academics</h1>
+            <ul>
+                <li>Eduversal Mathematics Competition (EMC) 2023 / Finalist</li>
+                <li>Kompetisi Matematika (KOMAT) UNPAR 2024 / Semifinalist</li>
+                <li>American Mathematics Olympiad (AMO) 2023 / Silver Award</li>
+                <li>International Junior Math Olympiad 2024 / Bronze Award</li>
+                <li>Southeast Asian Mathematical Olympiad 2024, National Round / Silver Award</li>
+                <li>Singapore International Math Olympiad 2023 / Silver Award </li>
+                <li>World Sakamoto Mathematics Championship Nasional 2023 / 1st Place</li>
+                <li>International Mathematics Olympiad Competition of Southeast Asia (IMOCSEA) International Round 2023 / Silver Award, 2nd Runner Up of Top Scorer Math</li>
+                <li>Hong Kong International Mathematical Olympiad (HKIMO) 2024, National Round / Silver Award</li>
+                <li>Future Intelligence Students Olympiad (FISO) 2024, International Round / Silver Award</li>
+            </ul>
+        </div>
+    </div>
+    <div class="parallax ketiga"></div>
+    <div class="content achieve">
+        <div>
+            <h1>Achievements: Arts</h1>
+            <ul>
+                <li>6th Singapore Golden Lion Awards International Music Festival 2025 / Bronze Award</li>
+                <li>The 10th Hong Kong International Youth Performing Arts Festival (HKYPAF) 2023 / Distinction Award Crystal Medal (Piano A02 Age Group Senior Class)</li>
+                <li>The International Youth Festival of Music and Arts 2024 in Sozopol / 1st Place</li>
+                <li>The World Cup of Folklore 2024 / 2nd Place</li>
+                <li>Rhapsodie Indonesia Piano Competition 2024 / 3rd Place</li>
+                <li>Rhapsodie.co Indonesia Piano Competition 2022 / 1st Place</li>
+                <li>Veranza Indonesia Open Piano Competition 2023 / 2nd Place (Piano Elementary 4)</li>
+            </ul>
+        </div>
+    </div>>
+</body>
+</html>
